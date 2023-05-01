@@ -175,23 +175,26 @@
 
 })(jQuery);
 
-// const showDialog = document.getElementById('Check');
-// const dialog = document.getElementById('button');
-
-// function check(){
-//      dialog.click()
-// }
-
-// // pop-up
-
-// document.querySelector("#Check1").addEventListener("click",function(){
-//   document.querySelector(".popup").classList.add("active");
-// });
-// document.querySelector(".popup .close-btn").addEventListener("click",function(){
-//   document.querySelector(".popup").classList.remove("active");
-// });
+// pop-up
+const form = document.querySelector('form');
+const select = document.querySelector('#teacher-select');
+const submitButton = document.querySelector('#Check1');
 
 
+submitButton.addEventListener('click', (event) => {
+    // Prevent the form from submitting
+    event.preventDefault();
+    
+    // Check if a value is selected in the select element
+    if (select.value !== '' && select.value !== 'a') {
+      // Execute the popup function
+      popup();
+    } else {
+      // Do nothing
+      warn_popup();
+
+    }
+  });
 function popup(){
     //if condition for available is tru then run this pop up
     {
@@ -201,6 +204,8 @@ function popup(){
         icon: "success",
         button: "Ok!",
       });}
+    }
+function error_popup(){
       { //if condition false run this pop up
         swal({
             title: "Sorry!",
@@ -208,7 +213,10 @@ function popup(){
             icon: "error",
             button: "Try Again!",
           });} 
-     { // if none of the value is selected for teachers
+    
+}
+function warn_popup(){
+    { // if none of the value is selected for teachers
         swal({
             title: "Warning!",
             text: "Please first select the above details!",
