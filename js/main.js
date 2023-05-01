@@ -175,18 +175,44 @@
 
 })(jQuery);
 
-const showDialog = document.getElementById('Check');
-const dialog = document.getElementById('button');
+// const showDialog = document.getElementById('Check');
+// const dialog = document.getElementById('button');
 
-function check(){
-     dialog.click()
+// function check(){
+//      dialog.click()
+// }
+
+// // pop-up
+
+// document.querySelector("#Check1").addEventListener("click",function(){
+//   document.querySelector(".popup").classList.add("active");
+// });
+// document.querySelector(".popup .close-btn").addEventListener("click",function(){
+//   document.querySelector(".popup").classList.remove("active");
+// });
+
+
+function popup(){
+    //if condition for available is tru then run this pop up
+    {
+    swal({
+        title: "Yes!",
+        text: "The Faculty is available!",
+        icon: "success",
+        button: "Ok!",
+      });}
+      { //if condition false run this pop up
+        swal({
+            title: "Sorry!",
+            text: "The Faculty is not available!",
+            icon: "error",
+            button: "Try Again!",
+          });} 
+     { // if none of the value is selected for teachers
+        swal({
+            title: "Warning!",
+            text: "Please first select the above details!",
+            icon: "warning",
+            button: "Try Again!",
+          });} 
 }
-
-// pop-up
-
-document.querySelector("#Check1").addEventListener("click",function(){
-  document.querySelector(".popup").classList.add("active");
-});
-document.querySelector(".popup .close-btn").addEventListener("click",function(){
-  document.querySelector(".popup").classList.remove("active");
-});
