@@ -8592,6 +8592,7 @@ tbody td:active {
     cursor: pointer;
     outline: none;
     margin-right: 10px;
+    margin-top: 8%;
   }
   
   #Check2 {
